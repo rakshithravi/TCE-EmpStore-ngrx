@@ -1,14 +1,10 @@
-import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { EmpData } from '../emp.model';
-import { EmpServiceService } from '../emp-service.service';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { Observable } from 'rxjs/internal/Observable';
-import { select, Store } from '@ngrx/store';
-import EmpState from '../state/emp.state';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { map } from 'rxjs/internal/operators/map';
-import * as EmpActions from '../state/emp.action';
 import { EmpFacadeService } from '../emp-facade.service';
 
 

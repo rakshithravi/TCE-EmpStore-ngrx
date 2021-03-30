@@ -1,6 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as EmpActions from './emp.action';
-import { EmpData } from '../emp.model';
 import EmpState, { initializeState } from './emp.state';
 
 export const intialState = initializeState();
