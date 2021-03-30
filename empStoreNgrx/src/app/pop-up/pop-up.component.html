@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>
+    <div *ngIf="isCreate;else updateHeader">
+        Please enter the details of the new employee
+    </div>
+
+    <ng-template #updateHeader>Please update the details of the employee</ng-template>
+</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput [(ngModel)]="id" type="number">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>E-MAIL</mat-label>
+        <input matInput [(ngModel)]="email" type="email">
+    </mat-form-field>
+    <mat-form-field>
+
+        <mat-label> First Name </mat-label>
+        <input matInput [(ngModel)]="first_name" type="text">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Last Name</mat-label>
+        <input matInput [(ngModel)]="last_name" type="text">
+    </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="{'id': id,
+'email': email, 'first_name': first_name, 'last_name': last_name, 'avatar': avatar}" cdkFocusInitial>
+        <div *ngIf="isCreate;else updateButton">
+            Create
+        </div>
+
+        <ng-template #updateButton>Update</ng-template>
+    </button>
+</div>
